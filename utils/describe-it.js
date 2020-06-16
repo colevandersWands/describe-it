@@ -3,14 +3,13 @@ const describe = (description, testFunction) => {
     console.error(new TypeError('first argument must be a string'));
     return;
   }
-
-  console.group(`%c${description}`, 'font-weight: bold;');
-
   if (typeof testFunction !== 'function') {
     console.error(new TypeError('second argument must be a function'));
     console.groupEnd();
     return
   }
+
+  console.group(`%c${description}`, 'font-weight: bold;');
 
   try {
     testFunction();
