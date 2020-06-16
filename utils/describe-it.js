@@ -13,7 +13,7 @@ const describe = (description, testFunction) => {
   }
 
   try {
-    typeof testFunction === 'function' && testFunction();
+    testFunction();
   } catch (err) {
     console.error('%cSUITE ERROR:', 'font-weight: bold;', err);
   };

@@ -35,7 +35,6 @@ describe('the button', () => {
     const button = document.getElementById('main-section').children[2];
     expect(button).to.have.text('pizza');
   });
-
   it('and log pizza on click', () => {
     const button = document.getElementById('main-section').children[2];
     expect(button).to.have.attribute('onclick', 'console.log("pizza")');
