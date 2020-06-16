@@ -5,12 +5,10 @@ const describe = (description, testFunction) => {
   }
   if (typeof testFunction !== 'function') {
     console.error(new TypeError('second argument must be a function'));
-    console.groupEnd();
     return
   }
 
   console.group(`%c${description}`, 'font-weight: bold;');
-
   try {
     testFunction();
   } catch (err) {
@@ -23,8 +21,9 @@ const describe = (description, testFunction) => {
 const it = (() => {
   let itIsCalled = false;
   return (description, testFunction) => {
-    if (itIsCalled) { throw new Error('can not call it from inside of it'); }
-
+    if (itIsCalled) {
+      throw new Error('can not call it from inside of it');
+    }
     if (typeof description !== 'string') {
       console.error(new TypeError('first argument must be a string'));
       return;
