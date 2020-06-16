@@ -1,13 +1,13 @@
 const describe = (description, testFunction) => {
   if (typeof description !== 'string') {
-    console.error('%cSUITE ERROR', 'font-weight: bold;', new TypeError('first argument must be a string'));
+    console.error(new TypeError('first argument must be a string'));
     return;
   }
 
   console.group(`%c${description}`, 'font-weight: bold;');
 
   if (typeof testFunction !== 'function') {
-    console.error('%cSUITE ERROR', 'font-weight: bold;', new TypeError('second argument must be a function'));
+    console.error(new TypeError('second argument must be a function'));
     console.groupEnd();
     return
   }
